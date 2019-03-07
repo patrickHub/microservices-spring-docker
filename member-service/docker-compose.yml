@@ -1,0 +1,45 @@
+version: '3.7'
+
+services:
+   
+  member-service:
+    image: patrickhub/member-service:0.0.1-SNAPSHOT
+    container_name: member-service.dev
+    ports:
+        - 8081:8081
+    depends_on: 
+        - member-service-mysql
+    networks:
+      member-service-network:
+        aliases:
+          - member-service
+
+  member-service-mysql:
+    image: mysql:5.7
+    restart: always
+    container_name: member-service-mysql.dev
+    ports:
+        - '3307:3306'
+    expose:
+      # Opens port 3306 on the container
+      - '3306'
+    networks:
+      member-service-network:
+        aliases:
+          - member-service-mysql
+    environment:
+      MYSQL_DATABASE: 'memberservicedb'
+      # So you don't have to use root, but you can if you like
+      MYSQL_USER: 'root'
+      # You can use whatever password you like
+      MYSQL_PASSWORD: 'password'
+      # Password for root access
+      MYSQL_ROOT_PASSWORD: 'password'
+      
+      # Where our data will be persisted
+    command: --init-file /data/member-service/db/table-creation.sql
+    volumes:
+      - ./db/table-creation.sql:/data/member-service/db/table-creation.sql
+      
+networks:
+    member-service-network:
