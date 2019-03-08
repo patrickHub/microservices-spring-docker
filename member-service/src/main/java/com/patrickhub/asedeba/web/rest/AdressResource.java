@@ -56,7 +56,7 @@ public class AdressResource {
 	 * @throws URISyntaxException if the Location URI syntax is incorrect
 	 */
 	@PostMapping("/adress")
-	public ResponseEntity<Adress> save(@Valid @RequestBody Adress adress) throws URISyntaxException{
+	public ResponseEntity<Adress> createAdress(@Valid @RequestBody Adress adress) throws URISyntaxException{
 		
 		LOG.debug("REST request to save an Adress: { }", adress);
 		if(adress.getId() != null) {
@@ -69,7 +69,7 @@ public class AdressResource {
 	}
 	
 	/**
-	 * PUT /adress
+	 * PUT /adress :  update an existing adress
 	 * @param adress adress to update
 	 * @return ResponseEntity with status 200 and body the updated adress
 	 * or with status 400 (Bad Request) if the adress is not valid
@@ -100,7 +100,7 @@ public class AdressResource {
 	 * @return ResponseEntity with status 200 (OK) and the list of adresses in boby
 	 */
 	@GetMapping("/adress")
-	public ResponseEntity<List<Adress>> findAll(Pageable pageable){
+	public ResponseEntity<List<Adress>> getAllAdresses(Pageable pageable){
 		
 		LOG.debug("REST request to get a page of adresses");
 		Page<Adress> result = adressService.findAll(pageable);

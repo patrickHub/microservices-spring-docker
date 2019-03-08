@@ -120,3 +120,10 @@ INSERT INTO Adress (adressStreet, adressZipCode, adressCity, adressCountry, adre
 INSERT INTO Adress (adressStreet, adressZipCode, adressCity, adressCountry, adressMemberID)
 	VALUES('route de Lausanne 2', 1400, 'Yverdon-les-Bains', 'Suisse', 2);
 
+INSERT INTO Donor(donorFirstName, donorLastName, donorBirthdate, donorEmail, donorPhone, donorCity, donorCountry, donorInscriptionDate)
+	VALUES('Bill', 'Gate', STR_TO_DATE('1-01-2000', '%d-%m-%Y'), 'bill.gate@gamil.com', '0779962912', 'Washington', 'United States', STR_TO_DATE('1-01-2000', '%d-%m-%Y'));
+
+
+INSERT INTO Donor (donorFirstName, donorLastName, donorBirthdate, donorEmail, donorPhone, donorCity, donorCountry, donorInscriptionDate)
+	VALUES('John', 'Hu', STR_TO_DATE('1-01-2000', '%d-%m-%Y'), 'john.hu@gamil.com', '0779962915', 'Los Angeles', 'United States', STR_TO_DATE('1-01-2012', '%d-%m-%Y'));
+
