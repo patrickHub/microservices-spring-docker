@@ -31,7 +31,7 @@ import com.patrickhub.asedeba.web.util.ResponseUtil;
 
 
 /**
- * Resource for Rest API request on Donor domain
+ * Controller for managing Rest API request on Donor domain
  * @author PatrickHub
  *
  */

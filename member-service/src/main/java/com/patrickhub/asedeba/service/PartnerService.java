@@ -5,47 +5,47 @@ import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import com.patrickhub.asedeba.domain.Donor;
+import com.patrickhub.asedeba.domain.Partner;
+
 
 /**
- * Service interface to manage donors
+ * service interface to manage partners
  * @author PatrickHub
  *
  */
-public interface DonorService {
+public interface PartnerService {
 	
 	/**
-	 * save a new donor .
+	 * save a new partner.
 	 * 
-	 * @param donor the entity to save
+	 * @param partner the entity to save
 	 * @return persisted entity
 	 */
-	Donor save(Donor donor);
-	
+	Partner save(Partner partner);
 	
 	/**
-	 * get all donors .
+	 * Get all partners.
 	 * 
-	 * @param pageable the pagination information
+	 * @param pageable pagination information
 	 * @return the list of the entity
 	 */
-	Page<Donor> findAll(Pageable pageable);
-	
+	Page<Partner> findAll(Pageable pageable);
 	
 	/**
-	 * get the "id" donor .
+	 * get the "id" partner.
 	 * 
 	 * @param id id of the entity
 	 * @return the entity
 	 */
-	Optional<Donor> findOne(Long id);
+	Optional<Partner> findOne(Long id);
 	
 	
 	/**
-	 * Delete the "id" donor
+	 * delete the "id" partner.
 	 * 
 	 * @param id id of the entity
 	 */
 	void delete(Long id);
 	
+
 }
