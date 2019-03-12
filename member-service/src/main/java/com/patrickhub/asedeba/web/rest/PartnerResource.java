@@ -32,7 +32,7 @@ import com.patrickhub.asedeba.web.util.ResponseUtil;
 
 /**
  * Controller for managing REST API request on Partner domain
- * @author Patrick-PC
+ * @author PatrickHub
  *
  */
 @RestController
@@ -75,8 +75,8 @@ public class PartnerResource {
 	  * PUT /partner: update an existing Partner.
 	  * 
 	  * @param partner partner to update
-	  * @return ResponseEntity with status 200 (OK)and body the updated partner 
-	  * or status 400(BadRequest) if the partner is invalid
+	  * @return ResponseEntity with status 200 (OK) and body the updated partner 
+	  * or status 400 (BadRequest) if the partner is invalid
 	  * or with status 500 (Internal Server Error) if the value could not be updated
 	  * @throws URISyntaxException if the Location URL is incorrect
 	  */
